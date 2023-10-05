@@ -1,22 +1,47 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import result from "@/views/Result.vue";
+import main from "@/views/Main.vue";
+import transcribe from "@/views/Transcribe.vue";
+import details from "@/views/Details.vue";
+import upload from "@/views/Upload.vue";
 
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
-    name: 'home',
-    component: HomeView
+    name: 'main',
+    component: main
   },
   {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
+    path: '/result',
+    name: 'result',
+    component: result,
+    meta:{
+      title: 'Transcription results'
+    }
+  },
+  {
+    path: '/trans',
+    name: 'trans',
+    component: transcribe
+  },
+  {
+    path: '/details',
+    name: 'details',
+    component: details,
+    meta:{
+      title: 'Model Details'
+    }
+  },
+  {
+    path: '/upload',
+    name: 'upload',
+    component: upload,
+    meta:{
+      title: 'Upload'
+    }
   }
 ]
 
